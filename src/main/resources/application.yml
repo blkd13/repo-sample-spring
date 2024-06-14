@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: server
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=todoapp
+    username: your_db_username
+    password: your_db_password
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    root: INFO
+    com.example.todoapp: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
